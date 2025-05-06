@@ -1,12 +1,26 @@
 # FTP server to transfer files between machines with zero configuration
 ## Usage
-1. `python -m pip install python-ftp-server`
-2. `python -m python_ftp_server -d "dirctory/to/share"`
+0. Create and enable virtualenvironment
+`python -m venv env; source env/bin/activate`
+
+2. Install module
+`python -m pip install python-ftp-server`
+
+3. Run python ftp server module in command line
+`python -m python_ftp_server -d "dirctory/to/share"`
+
 will print:
 ```bash
 Local address: ftp://<IP>:60000
 User: <USER>
 Password: <PASSWORD>
 ```
-3. Copy and paste your `IP`, `USER`, `PASSWORD`, `PORT` into [FileZilla](https://filezilla-project.org/) (or any other FTP client):
+
+Connect with ftp client
+
+Copy and paste your `IP`, `USER`, `PASSWORD`, `PORT` into [FileZilla](https://filezilla-project.org/) (or any other FTP client):
 ![](https://github.com/Red-Eyed/python_ftp_server/raw/master/img.png)
+
+- aria2c
+- curl
+
