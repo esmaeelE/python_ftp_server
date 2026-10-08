@@ -13,7 +13,6 @@ import socket
 import string
 from pathlib import Path
 
-import requests
 from OpenSSL import crypto, SSL
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import TLS_FTPHandler, FTPHandler
@@ -78,9 +77,9 @@ def create_self_signed_cert(cert_file: Path, key_file: Path):
 
 def main():
     example_text = "example:\n" \
-                   "    {0} -u user -p password\n" \
-                   "    {0} -u user -p password --readonly\n" \
-                   "    {0} -u user -p password --dir /tmp\n".format(__file__)
+                   "    python -m python_ftp_server -u user -p password\n" \
+                   "    python -m python_ftp_server -u user -p password --readonly\n" \
+                   "    python -m python_ftp_server -u user -p password --dir /tmp\n"
 
     parser = argparse.ArgumentParser(prog="ftp_server",
                                      description="FTP server for file sharing over internet or local network",
