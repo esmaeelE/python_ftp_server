@@ -11,6 +11,7 @@ import platform
 import random
 import socket
 import string
+import tempfile
 from pathlib import Path
 
 from OpenSSL import crypto, SSL
@@ -109,7 +110,7 @@ def main():
 
     if args.tls:
         handler = TLS_FTPHandler
-        temp_dir = Path(__file__).absolute().parent / "temp"
+        temp_dir = Path(tempfile.gettempdir()) / "python_ftp_server"
         temp_dir.mkdir(exist_ok=True)
 
         cert_file = temp_dir / "cert_file.crt"
